@@ -1,0 +1,20 @@
+--TRIGGER 1 
+--Vincolo sull'eta dei nuovi iscritti che deve necessariamente essere compresa tra quelle ricoperte dalla scuola calcio.
+CREATE OR REPLACE TRIGGER ETA_COMPRESA
+BEFORE INSERT ON ALLIEVO
+FOR EACH ROW
+DECLARE
+NON_AMMESSO EXCEPTION;
+ANNI NUMBER;
+
+BEGIN
+SELECT OTTIENI_ETA(:NEW.DATA_N) INTO ANNI
+FROM DUAL;
+IF ANNI>14 OR ANNI<5 THEN 
+	RAISE NON_AMMESSO;
+END IF;
+
+EXCEPTION
+WHEN NON_AMMESSO THEN
+	RAISE_APPLICATION_ERROR(-20010,'Non sono ammessi ragazzi  di ' || TO_CHAR(ANNI) || ' anni');
+END;

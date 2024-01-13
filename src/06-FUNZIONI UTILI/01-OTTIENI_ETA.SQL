@@ -1,0 +1,11 @@
+--FUNZIONE DI BASE 3 
+--La seguente funzione ci permette di ottene l'età a partire da una data definita in input
+
+CREATE OR REPLACE FUNCTION OTTIENI_ETA(DATA_IN DATE) RETURN NUMBER IS
+ETA NUMBER;
+
+BEGIN
+SELECT FLOOR((SYSDATE-DATA_IN)/365) INTO ETA
+FROM DUAL;
+RETURN ETA;
+END;
