@@ -24,8 +24,8 @@ From a practical implementation perspective:
     - Create the **USERS** who access the system, with the assignment of their respective **GRANTs**.
   - Associated a **Trigger system** with the database, such as logging users who access the database.
   - Implemented:
-    - Basic functions for simple mathematical operations.
-    - Procedures for more complex operations, which may also modify the database.
+    - Basic **functions** for simple mathematical operations.
+    - **Procedures** for more complex operations, which may also modify the database.
     - **Views** to:
       - Simplify access to data in complex queries.
       - Control user access by exposing only necessary data.
