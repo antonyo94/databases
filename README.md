@@ -17,8 +17,7 @@ So I was able to:
   - Outline the use cases and the sequence diagrams.
 
 From a practical implementation perspective:
-  - Independently created the **DDL statements** for table creation, including:
-    - Importing **PKs**, **FKs**, and other **CONSTRAINTs** or integrity constraints.
+  - Independently created the **DDL statements** for table creation, including setting **PKs**, **FKs**, and other **CONSTRAINTs** or integrity constraints.
   - Wrote scripts to:
     - Populate the database.
     - Create the **USERS** who access the system, with the assignment of their respective **GRANTs**.
